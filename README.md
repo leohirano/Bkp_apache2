@@ -46,10 +46,36 @@ echo "Backup para Apache Debian e derivados "
 		echo "Opcao 5 - Restaurar Backup "
 		echo "Opcao 6 - Sair"
 ```
+  - 1- A primeira opção permite Verificar se o diretório de backups (/backup) já existe
+  - 2- A segunda verifica se seu S.O é válido para execução 
+  - 3- Realiza Backup
+  - 4 - Agenda o Backup (com a necessidade de apontar o diretório)
+  - 5 Restaura Backuo
+  - 6 - Encerra a aplicação
+  
+##Restaurar Backup
 
-`${package.json.version}` 
-  - Import a HTML file and watch it magically convert to Markdown
-  - Drag and drop images (requires your Dropbox account be linked)
+Para restauração do backup é necessário somente inserir, data e hora. Exemplo : 
+
+`26-04-19-22h33min` 
+
+As demais informações são tratadas automaticamente, inserir outro caractere irá impedir a execução.
+
+## Agendamento de Backup
+
+Para realizar o agendamento de backup será realizado perguntas sobre que horário deve ser feito o backup.
+
+Todos agendamentos são inseridos no cron que pode ser visualizado com o comando : 
+
+```sh
+crontab -l
+```
+
+E sua remoção é manual.
 
 
+### Fim
 
+É uma aplicação para uma avaliação de faculdade mas pode ajudar alguém algum dia .
+
+:)
