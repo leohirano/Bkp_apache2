@@ -74,7 +74,7 @@ if [ $? -eq 0 ] ; then
  	echo " "
  	echo "Arquivo de log do procimento gerado com nome final log-backup-$data.txt"
 else
- 	echo"Erro backup"
+ 	echo "Erro backup"
  	echo "Backup concluido com falhas " > /backup/log-backup-$data.txt
  	echo "Criado pelo usuario: $USER" > /backup/log-backup-$data.txt
  	echo "Backup realizado dia : $data" > /backup/log-backup-$data.txt
