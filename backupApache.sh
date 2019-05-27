@@ -93,7 +93,7 @@ Restore(){
 		rm -rf /tmp/backup
 		mkdir /tmp/backup
 		cp /backup/backup-$bkpRestore.tar.gz /tmp/backup
-		tar -xf /tmp/backup/backup-$bkpRestore.tar.gz
+		/bin/tar -xpzvf /tmp/backup/backup-$bkpRestore.tar.gz
 		sleep 3
 		#apagar dados atuais
 		rm -rf /var/log/apache2 /var/www /etc/apache2/apache2.conf /etc/apache2/conf-available /etc/apache2/conf-enabled
