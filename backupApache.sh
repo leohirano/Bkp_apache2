@@ -53,12 +53,11 @@ Main(){
 checkDistro(){
 	test -f /etc/lsb-release
 	if [ $? != 0 ]; then
-		echo "Sistema operacional incorreto"
-		echo "Favor utilizar em um SO Válido!(Ubuntu)"
+		echo "Sistema operacional Valido"
 		sleep 1
 		 Main
 	else
-		echo "Sistema Operacional é válido"
+		echo "Sistema Operacional Invalido"
 		 Main
 	fi
 }
@@ -90,20 +89,7 @@ Restore(){
         echo "Foi realizado um backup com dados atuais"
 		echo "Backups atuais. Escolha um para recuperar inserindo data e hora"
 		read bkpRestore
-		rm -rf /tmp/backup
-		mkdir /tmp/backup
-		cp /backup/backup-$bkpRestore.tar.gz /tmp/backup
-		/bin/tar -xpzvf /tmp/backup/backup-$bkpRestore.tar.gz
-		sleep 3
-		#apagar dados atuais
-		rm -rf /var/log/apache2 /var/www /etc/apache2/apache2.conf /etc/apache2/conf-available /etc/apache2/conf-enabled
-		#mover todas as pastas atuais de etc
-		mv /tmp/backup/etc/apache2/apache2.conf /etc/apache2/apache2.conf
-		mv /tmp/backup/etc/apache2/conf-available /etc/apache2/conf-available
-		mv /tmp/backup/etc/apache2/conf-enabled /etc/apache2/conf-enabled
-		#mover todas as pastas atuais de var
-		mv /tmp/backup/var/log/apache2 /var/log/apache2
-		mv /tmp/backup/var/www /var/www 
+		/bin/tar -xpzf /backup/backup-$bkpRestore.tar.gz -C / 
 	else
 		echo "Nao ha backups"
 	fi
